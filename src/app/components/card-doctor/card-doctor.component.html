@@ -1,0 +1,14 @@
+
+<div class="carousel">
+  <button (click)="onPrevious()">Previous</button>
+  <div class="cards">
+    <div *ngFor="let doctor of doctorInfo.slice(currentIndex, currentIndex + 4)" class="card">
+      <img [src]="doctor.photo" alt="Doctor's Photo">
+      <span>{{ doctor.name }}</span>
+      <span>{{ doctor.specialty }}</span>
+      <span>{{ doctor.university }}</span>
+      <button>Appointment</button>
+    </div>
+  </div>
+  <button (click)="onNext()">Next</button>
+</div>

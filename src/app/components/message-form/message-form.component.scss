@@ -1,0 +1,73 @@
+
+.container{
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+  & span{
+    color: #FFD700;
+    text-transform: uppercase;
+
+  }
+}
+
+.content{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px;
+
+  & .image {
+    width: 30%;
+  }
+}
+
+.form{
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  & input {
+    width: 280px;
+    height: 35px;
+  }
+  & select {
+    width: 280px;
+    height: 35px;
+  }
+
+  & textarea{
+    width: 280px;
+    height: 35px;
+  }
+
+  & button {
+    width: 280px;
+    height: 35px;
+    background-color: #516EFF;
+    color: white;
+  }
+}
+
+.paciente{
+  width: 448px;
+  height: 588px;
+}
+
+@media (max-width: 768px) {
+  .container{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .content{
+    flex-direction: column;
+
+  }
+  .paciente{
+    width:  224px;
+    height: 300px;
+  }
+  .form {
+    margin-top: 40px;
+  }
+}
