@@ -1,0 +1,44 @@
+<div class="container">
+    <h1>MAKE AN <span> appoinment</span></h1>
+    <h1>Consul with our <br> Doctor </h1>
+</div>
+<hr>
+
+<div class="content">
+  <div class="image">
+    <img src="../../../assets/cita.png" class="paciente" alt="persona en dentista" srcset="">
+  </div>
+  <div class="form">
+  <form [formGroup]="messageForm" (ngSubmit)="sendMessage()">
+    <div>
+      <label>Name</label>
+      <br>
+      <input type="text"  formControlName="nombre">
+    </div>
+    <div>
+      <label>Telephone</label>
+      <br>
+      <input type="text" placeholder="(555) 000-000" formControlName="telefono">
+    </div>
+    <div>
+      <label>Date</label>
+      <br>
+      <input type="date" formControlName="fecha">
+    </div>
+    <div>
+      <label>Doctor</label>
+      <br>
+      <select formControlName="doctor">
+        <option *ngFor="let doctor of doctors" [value]="doctor.name">{{ doctor.name }}</option>
+      </select>
+    </div>
+    <div>
+      <label>Message:</label>
+      <br>
+      <textarea formControlName="mensaje"></textarea>
+    </div>
+    <button type="submit">Enviar Mensaje</button>
+    <div *ngIf="sendSucces">Newsletter enviado con éxito</div>
+  </form>
+  </div>
+</div>

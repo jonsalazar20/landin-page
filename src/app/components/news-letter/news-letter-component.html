@@ -1,0 +1,34 @@
+<!-- <div class="container">
+  <div class="new">
+      <h1>Subscribe to our newsletter</h1>
+    <div class="form">
+      <input type="text" [(ngModel)]="nombre" placeholder="First name">
+      <input type="email" [(ngModel)]="correo" placeholder="Email address">
+      <button (click)="sendNewsLetter()">Enviar Newsletter</button>
+    </div>
+    <div *ngIf="sendSucces">Newsletter enviado con éxito</div>
+  </div>
+</div> -->
+
+<div class="container">
+  <div class="new">
+    <h1>Subscribe to our newsletter</h1>
+    <form class="form" [formGroup]="newsletterForm" (ngSubmit)="sendNewsLetter()">
+      <div>
+        <input type="text" formControlName="nombre" placeholder="Ingresa tu nombre">
+        <div *ngIf="newsletterForm.get('nombre')?.invalid && newsletterForm.get('nombre')?.touched">
+          <span *ngIf="newsletterForm.get('nombre')?.errors?.['required']">Nombre es obligatorio</span>
+        </div>
+      </div>
+      <div>
+        <input type="email" formControlName="correo" placeholder="Ingresa tu correo electrónico">
+        <div *ngIf="newsletterForm.get('correo')?.invalid && newsletterForm.get('correo')?.touched">
+          <span *ngIf="newsletterForm.get('correo')?.errors?.['required']">Correo es obligatorio</span>
+          <span *ngIf="newsletterForm.get('correo')?.errors?.['email']">Correo electrónico inválido</span>
+        </div>
+      </div>
+      <button type="submit" [disabled]="newsletterForm.invalid">Enviar Newsletter</button>
+    </form>
+    <div *ngIf="sendSucces">Newsletter enviado con éxito</div>
+  </div>
+</div>

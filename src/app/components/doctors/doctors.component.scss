@@ -1,0 +1,13 @@
+.container{
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+  // justify-content: flex-start;
+}
+
+.meet{
+  text-transform: uppercase;
+  & span {
+    color: #FFD700;
+  }
+}

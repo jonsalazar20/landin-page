@@ -1,0 +1,71 @@
+
+
+.container{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px;
+  & span{
+    color: #FFD700;
+  }
+  & .services{
+    width: 40%;
+  }
+
+  & .image{
+    width: 40%;
+  }
+  & .text{
+    margin-top: 30px;
+  }
+}
+.started{
+  background-color: #516EFF;
+  color: white;
+  border-radius: 8px;
+  width: 187px;
+  height: 56px;
+  cursor: pointer;
+}
+
+.learn{
+  border: 1px solid grey;
+  background-color: transparent;
+  width: 187px;
+  height: 56px;
+  color: grey;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.buttons{
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-around;
+
+}
+.dentista{
+  width: 500px;
+  height: 496px;
+}
+
+
+@media (max-width: 768px) {
+  .container{
+    flex-direction: column;
+    & .services{
+      width: 40%;
+    }
+
+    & .image{
+      margin-top: 60px;
+      width: 30%;
+    }
+  }
+  .dentista{
+    width: 400px;
+    height: 150px;
+  }
+}
+
+
